@@ -1,0 +1,27 @@
+{
+  "name": "botlaw",
+  "version": "0.0.2",
+  "description": "randomQuoteGenerator.js is a Node.js API that extracts a random verse from Liber AL Vel Legis",
+  "main": "randomQuoteGenerator.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuisGonzaga/botlaw"
+  },
+  "keywords": [
+    "Liber_AL"
+  ],
+  "author": "Luis Gonzaga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisGonzaga/botlaw/issues"
+  },
+  "engines": {
+    "node": "0.10.25"
+  },
+  "dependencies": {
+    "express": "~4.14.0"
+  }
+}
