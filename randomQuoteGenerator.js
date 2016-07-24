@@ -9,6 +9,12 @@ var port= process.env.PORT;
 var http = require('http');
 
 var server = http.createServer(handleRequest);
+
+function handleRequest(request, response){
+    //response.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    response.end(rndQuote());
+}
+
 /* Because of the "XMLHttpRequest cannot load " error this was commented, 
 the error seems to be raised because ot attempting to set the Header in a GET request 
 
