@@ -15,7 +15,7 @@ server.listen(port, function(){
 
 function handleRequest(request, response){
     response.setHeader('Access-Control-Allow-Origin', '*');
-    response.setHeader('Access-Control-Allow-Headers': 'Content-Type');
+    response.setHeader('Access-Control-Allow-Headers':  'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
     response.end(rndQuote());
 }
