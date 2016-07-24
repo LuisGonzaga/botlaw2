@@ -4,18 +4,14 @@ var rawText  = '{"The Book of the Law":[{"subtitle":"Liber AL Vel Legis","symbol
 
 var express = require('express');
 
-var app = express();
-
 var port= process.env.PORT;
 
 var http = require('http');
 
-app.use(function(req, res, next) { 
-	res.header('Access-Control-Allow-Origin', "*"); 
-	res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE'); 
-	res.header('Access-Control-Allow-Headers', 'Content-Type'); 
-	next();
-})
+/* Because of the "XMLHttpRequest cannot load " error this was commented, 
+the error seems to be raised because ot attempting to set the Header in a GET request 
+
+var app = express();
 
 var server = http.createServer(handleRequest);
 
@@ -24,6 +20,7 @@ function handleRequest(request, response){
     response.end(rndQuote());
 }
 
+
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
@@ -31,6 +28,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
+*/
 
 server.listen(port, function(){
     console.log("Server listening on: http://localhost:%s", port);
