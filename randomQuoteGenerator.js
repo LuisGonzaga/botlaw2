@@ -11,7 +11,8 @@ var http = require('http');
 var server = http.createServer(handleRequest);
 
 function handleRequest(request, response){
-    //response.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    response.addHeader('Content-Type', 'text/html; charset=UTF-8');
+    response.addHeader("Access-Control-Allow-Origin", "*");
     response.end(rndQuote());
 }
 
