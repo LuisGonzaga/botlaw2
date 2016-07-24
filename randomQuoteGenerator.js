@@ -54,6 +54,6 @@ function rndQuote(){
     }
     var objBOL = JSON.parse(rawText);
     var extractChapter = objBOL["The Book of the Law"][intChapter]; 
-    var extractQuote = "AL " + strChapter + "," + intVerse + ": " + extractChapter.verses[intVerse];
+    var extractQuote = "Liber AL " + strChapter + "," + intVerse + ": " + extractChapter.verses[intVerse];
     return extractQuote;
 }
