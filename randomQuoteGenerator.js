@@ -9,9 +9,13 @@ var port= process.env.PORT;
 var http = require('http');
 
 var server = http.createServer(handleRequest);
+server.listen(port, function(){
+    console.log("Server listening on: http://localhost:%s", port);
+});
 
 function handleRequest(request, response){
-    //response.addHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader('Content-Type', 'text/html; charset=UTF-8');
     response.end(rndQuote());
 }
 
@@ -19,12 +23,6 @@ function handleRequest(request, response){
 the error seems to be raised because ot attempting to set the Header in a GET request 
 
 var app = express();
-
-function handleRequest(request, response){
-    response.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    response.end(rndQuote());
-}
-
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -34,10 +32,6 @@ app.use(function (req, res, next) {
     next();
 });
 */
-
-server.listen(port, function(){
-    console.log("Server listening on: http://localhost:%s", port);
-});
 
 function rndQuote(){    
     var intChapter = Math.floor((Math.random()*3)+1);
